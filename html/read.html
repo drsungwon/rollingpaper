@@ -1,25 +1,48 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 
-<head>
-	<meta charset="utf-8" />
-	<title> RollingPaper Read </title>
-	<link rel="stylesheet" href="../css/style.css" />
-</head>
+	<head>
+    	<title>Rolling-Paper</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+		<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
-<body>
-</body>
-	<div id="rollingpaper_read">	
-	<h1> Read </h1>
-	<form id="read_form" action="#" method="get">
-		<p> 
-			<label for="read_message"></label>
-			<input id="read_message" name="read_message" type="text" placeholder="타인이 기록한 메시지를 봅니다." required />
-		</p>
-		
-		<p id="home">
-			<button id="home" type="submit" formtarget="_top" title="home" formaction="../index.html">Home</button>
-		</p>	
-	</form>
-	</div>
+	</head>
+	
+	<body>
+
+  		<!-- Begin: Main tweet list view -->
+  		<section id="pageTweetList" data-role="page">
+	  		<header data-role="header" data-position="fixed">
+		  		<h1>읽기</h1>
+			</header>
+			<div class="content" data-role="content">
+				<ul data-role="listview">
+					<li><p>글1</p></li>
+					<li><p>글2</p></li>
+					<li><p>글3</p></li>
+					<li><p>글4</p></li>
+					<li><p>글5</p></li>
+				</ul>
+			</div>
+			<footer data-role="footer" data-position="fixed"><h1>경희대학교 모바일컨버전스연구실</h1></footer>
+		</section>
+		<!-- End: Main tweet list view -->
+	
+		<!-- Begin: Tweet detail view -->
+		<section id="pageTweetDetail" data-role="page">
+			<header data-role="header"><h1>읽기</h1></header>
+			<div class="content" data-role="content">
+				<div class="container-tweet">
+					<p>메시지가 있을 자리입니다.</p>
+				</div>
+			</div>
+			<footer data-role="footer"><h1>경희대학교 모바일컨버전스연구실</h1></footer>
+		</section>
+		<!-- End: Tweet detail view -->
+	
+  </body>
+
 </html>

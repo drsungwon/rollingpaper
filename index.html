@@ -1,20 +1,86 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 
-<head>
-	<meta charset="utf-8" />
-	<title> RollingPaper </title>
-	<link rel="stylesheet" href="css/style.css" />
-</head>
+	<head>
+    	<title>Rolling-Paper</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+		<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
-<body>
-</body>
-	<div id="rollingpaper_menu">	
-	<h1> RollingPaper </h1>
-	<ul>
-		<li><a class="action read" href="./html/read.html"> READ </a></li>
-		<li><a class="action write" href="./html/write.html"> WRITE </a></li>
-		<li><a class="action who" href="./html/about.html"> WHO? </a></li>
-	</ul>
-	</div>
+	</head>
+
+	<body>
+
+		<!-- Begin main page -->
+		<div data-role="page" id="pageHome">
+			<div data-role="main" class="ui-content">
+				<h2 align="center">Welcome to <i>RollingPaper</i></h2>
+				<ul data-role="listview" data-inset="true" data-split-theme="b">
+<!--				<li data-role="divider" data-theme="a">선택 기능</li> -->					
+					<li>					
+						<a href="#page_write" class="ui-btn ui-corner-all ui-icon-edit ui-btn-icon-left">
+<!--						<img src="firefox.png"> -->
+							<h2>쓰기</h2>  
+							<p>방문 장소에 자신이 작성한 글을 남깁니다.</p>
+						</a>
+						<a href="#page_write"></a>
+					</li>
+					<li>
+						<a href="./html/read.html" class="ui-btn ui-corner-all ui-icon-eye ui-btn-icon-left" data-rel="dialog" data-transition="pop">
+<!--						<img src="chrome.png"> -->
+							<h2>읽기</h2>
+							<p>방문 장소에 다른 사람이 남긴 글을 읽습니다.</p>
+							</a>
+						<a href="./html/read.html" data-rel="dialog" data-transition="pop"></a>
+					</li>					
+					<li>
+						<a href="./html/about.html" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-left">
+<!--						<img src="firefox.png"> -->
+							<h2>누구</h2>  
+							<p>방문 장소에 대한 정보를 읽습니다.</p>
+						</a>
+						<a href="./html/about.html"></a>
+					</li>					
+				</ul>
+			</div>
+		</div> 			
+		<!-- end main page -->
+
+		<!-- Begin write page -->		
+		<div data-role="page" data-dialog="true" id="page_write">
+		
+			<div data-role="header">
+				<h1>쓰기</h1>
+			</div>
+
+			<div class="ui_content" data-role="content">
+<!--			<h3>Leave your message</h3> -->
+				<form id="myform" action="" method="post">
+					<div data-role="fieldcontain">
+						<form method="post" action="">
+							<div>
+        						<textarea name="write_msg" id="write_msg"></textarea>
+							</div>
+							<input type="submit" class="ui-btn" value="작성한 글 남기기">
+						</form> 
+					</div>	      
+				</form>
+				
+				<form method="post" action="">
+					<label for="minutes">작성하신 글을 몇분 뒤에 볼수 있도록 할까요?</label>
+					<input type="range" name="minutes" id="minutes" value="60" min="0" max="360">
+				</form>
+			</div>
+
+			<div data-role="footer">
+				<h1>경희대학교 모바일컨버전스연구실</h1>
+			</div>
+			
+		</div> 		
+		<!-- end third page -->
+
+	</body>
+	
 </html>
